@@ -1,0 +1,202 @@
+@import "../../../mixin.scss";
+
+.banner {
+  width: 100%;
+  height: 450px;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  // margin-top: 10px;
+  position: relative;
+  @include md {
+    height: 700px;
+  }
+
+  .bgclass {
+    // width: 520px;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+
+    .lazy-load-image-background {
+      width: 100%;
+      height: 100%;
+
+      .xyz {
+        width: 100%;
+        height: 100%;
+        // width: 100px;
+        // background-size: cover;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    // width: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    color: aliceblue;
+    line-height: 20px;
+
+    .content {
+      top: 0;
+      .title {
+        // display: none;
+
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 10px;
+
+        @include sm {
+          font-size: 80px;
+        }
+
+        .title-word {
+          animation: color-animation 4s linear infinite;
+        }
+
+        .title-word-1 {
+          --color-1: #df8453;
+          --color-2: #3d8dae;
+          --color-3: #e4a9a8;
+          margin-bottom: 10px;
+        }
+
+        .title-word-2 {
+          --color-1: #dbad4a;
+          --color-2: #accfcb;
+          --color-3: #17494d;
+        }
+
+        .title-word-3 {
+          --color-1: #accfcb;
+          --color-2: #e4a9a8;
+          --color-3: #accfcb;
+        }
+
+        .title-word-4 {
+          --color-1: #3d8dae;
+          --color-2: #df8453;
+          --color-3: #e4a9a8;
+        }
+
+        @keyframes color-animation {
+          0% {
+            color: var(--color-1);
+          }
+          32% {
+            color: var(--color-1);
+          }
+          33% {
+            color: var(--color-2);
+          }
+          65% {
+            color: var(--color-2);
+          }
+          66% {
+            color: var(--color-3);
+          }
+          99% {
+            color: var(--color-3);
+          }
+          100% {
+            color: var(--color-1);
+          }
+        }
+
+        /* Here are just some visual styles. 🖌 */
+
+        .container {
+          display: grid;
+          place-items: center;
+          text-align: center;
+          // height: 100vh;
+        }
+
+        .titlein {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 800;
+          // font-size: 120px;
+          gap: 50px;
+          display: flex;
+          flex-direction: column;
+          text-transform: uppercase;
+
+          @include md {
+            gap: 100px;
+          }
+        }
+
+        @include md {
+          margin-bottom: 0;
+          font-size: 150px;
+          gap: 100px;
+        }
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        input {
+          width: calc(100% - 100px);
+          height: 50px;
+          background-color: white;
+          outline: 0;
+          border: 0;
+          border-radius: 30px 0 0 30px;
+          padding: 0 15px;
+          font-size: 14px;
+          @include md {
+            width: calc(100% - 150px);
+            height: 60px;
+            font-size: 20px;
+            padding: 0 30px;
+          }
+        }
+        button {
+          width: 100px;
+          height: 50px;
+          background: var(--gradient);
+          color: white;
+          outline: 0;
+          border: 0;
+          border-radius: 0 30px 30px 0;
+          font-size: 16px;
+          cursor: pointer;
+          @include md {
+            width: 150px;
+            height: 60px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.opacity-layer {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+  position: absolute;
+  // margin-bottom: 10px;
+  left: 0;
+  // top: 0;
+  bottom: 0;
+  @include md {
+    // bottom: 0;
+  }
+}
