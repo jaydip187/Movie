@@ -3,7 +3,7 @@ import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import ApiFeach from "../../../hooks/ApiFeach";
 import { useSelector } from "react-redux";
-import Img from "../../../components/LazyLoadImage/img";
+import LazyImg from "../../../components/lazyLoadImage/LazyImg";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 const Banner = () => {
@@ -38,7 +38,7 @@ const Banner = () => {
       <div className="banner">
         {!loading && (
           <div className="bgclass">
-            <Img className="xyz" src={bg} />
+            <LazyImg className="xyz" src={bg} />
           </div>
         )}
         <div className="opacity-layer"></div>
@@ -70,7 +70,7 @@ const Banner = () => {
                 onKeyUp={QueryHandler}
               />
               <button>Search</button> */}
-              {/* <img src={bg} alt="" /> */}
+              {/* <LazyImg src={bg} alt="" /> */}
             </div>
           </div>
         </div>

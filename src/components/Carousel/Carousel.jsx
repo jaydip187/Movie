@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import Img from "../lazyLoadImage/Img";
+import LazyImg from "../lazyLoadImage/LazyImg";
 import PosterFallback from "../../assets/no-poster.png";
 import Rating from "../Rating/Rating";
 import Genres from "../Genres/Genres";
@@ -72,7 +72,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                   onClick={() => handelnavigate(item.media_type, item.id)}
                 >
                   <div className="posterBlock">
-                    <Img src={imgUrl} />
+                    <LazyImg src={imgUrl} />
                     <Rating rating={item.vote_average.toFixed(1)} />
                     <Genres data={item.genre_ids.slice(0, 2)} />
                   </div>

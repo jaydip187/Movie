@@ -1,6 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Img = ({ src, className }) => {
+const LazyImg = ({ src, className }) => {
   // console.log(src);
   return (
     <div>
@@ -15,4 +15,4 @@ const Img = ({ src, className }) => {
   );
 };
 
-export default Img;
+export default LazyImg;

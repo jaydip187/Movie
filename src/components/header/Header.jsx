@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/logo.png";
+import LazyImg from "../lazyLoadImage/LazyImg";
 
 const Header = () => {
   const [show, setShow] = useState("top");
@@ -85,8 +86,8 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
-          <img src={logo} alt="logo" onClick={() => navigate("/")} />
+        <div className="logo" onClick={() => navigate("/")}>
+          <LazyImg src={logo} alt="logo" />
         </div>
         <div className="menuItems">
           <li
@@ -141,7 +142,7 @@ const Header = () => {
                   setShowSearch(false);
                 }}
               />
-              {/* <img src={bg} alt="" /> */}
+              {/* <LazyImg src={bg} alt="" /> */}
             </div>
           </ContentWrapper>
         </div>

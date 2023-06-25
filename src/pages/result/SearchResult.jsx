@@ -7,7 +7,7 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import noResults from "../../assets/no-results.png";
 import Loader from "../../components/Loader/Loader";
 import Card from "../../components/Card/Card";
-import Img from "../../components/LazyLoadImage/img";
+import LazyImg from "../../components/lazyLoadImage/LazyImg";
 import resultNotFound from "../../assets/no-results.png";
 const SearchResult = () => {
   const [data, setData] = useState(null);
@@ -80,7 +80,7 @@ const SearchResult = () => {
             <>
               <span className="resultNotFound">Sorry , Result Not Found </span>
               <div className="xyz">
-                <Img className="img" src={resultNotFound} />
+                <LazyImg className="img" src={resultNotFound} />
               </div>
             </>
           )}

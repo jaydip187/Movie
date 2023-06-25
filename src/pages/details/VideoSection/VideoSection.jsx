@@ -5,7 +5,7 @@ import "./style.scss";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import { PlayIcon } from "../detailsBanner/PlayIcon";
 import VideoPopup from "../../../components/Video/VideoPop";
-import Img from "../../../components/lazyLoadImage/Img";
+import LazyImg from "../../../components/lazyLoadImage/LazyImg";
 
 const VideosSection = ({ data, loading }) => {
   const [show, setShow] = useState(false);
@@ -38,7 +38,7 @@ const VideosSection = ({ data, loading }) => {
                   }}
                 >
                   <div className="videoThumbnail">
-                    <Img
+                    <LazyImg
                       src={`https://img.youtube.com/vi/${vid.key}/mqdefault.jpg`}
                     />
                     <PlayIcon />

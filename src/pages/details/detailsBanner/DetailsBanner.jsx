@@ -9,7 +9,7 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import ApiFeach from "../../../hooks/ApiFeach";
 import Genres from "../../../components/Genres/Genres";
 import Rating from "../../../components/Rating/Rating";
-import Img from "../../../components/lazyLoadImage/Img";
+import LazyImg from "../../../components/lazyLoadImage/LazyImg";
 import PosterFallback from "../../../assets/no-poster.png";
 import VideoPopup from "../../../components/Video/VideoPop";
 
@@ -44,7 +44,7 @@ const DetailsBanner = ({ video, crew }) => {
           {!!data && (
             <React.Fragment>
               <div className="backdrop-img">
-                <Img
+                <LazyImg
                   src={url?.images?.base_url + "original" + data.backdrop_path}
                 />
               </div>
@@ -54,14 +54,14 @@ const DetailsBanner = ({ video, crew }) => {
                   {/* ======================================================================= */}
                   <div className="left">
                     {data.poster_path ? (
-                      <Img
+                      <LazyImg
                         className="posterImg"
                         src={
                           url?.images?.base_url + "original" + data.poster_path
                         }
                       />
                     ) : (
-                      <Img className="posterImg" src={PosterFallback} />
+                      <LazyImg className="posterImg" src={PosterFallback} />
                     )}
                   </div>
 
