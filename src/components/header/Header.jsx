@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.scss";
 import { ToastContainer, toast } from "react-toastify";
@@ -18,7 +18,6 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [showSearch, setShowSearch] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handlenav = () => {
     if (window.scrollY > 200) {
@@ -40,7 +39,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handlenav);
     };
-  }, [lastScrollY]);
+  }, [handlenav, lastScrollY]);
 
   const opensearch = () => {
     setShowSearch(true);
